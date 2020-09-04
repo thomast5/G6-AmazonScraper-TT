@@ -23,7 +23,7 @@ def get_data(pageNo):
 
     r = requests.get(website+str(pageNo)+'?ie=UTF8&pg='+str(pageNo), headers=headers)#, proxies=proxies)
     content = r.content
-    soup = BeautifulSoup(content)
+    soup = BeautifulSoup(content, features="lxml")
     #print(soup)
 
     prodListMaster = []
